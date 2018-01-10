@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body>
+
+<!--ng-app 指令告诉 AngularJS，div 元素是 AngularJS 应用程序 的"所有者"。-->
+<div ng-app="app">
+
+    <div ng-controller="mycontroller1">
+      <h1>{{context}}</h1>
+
+    </div>
+
+    <div ng-controller="mycontroller2">
+        <h1>{{name}}</h1>
+
+    </div>
+</div>
+<script>
+    var app = angular.module("app",[]);
+
+
+    app.service("User",function () {
+        return {}
+    });
+
+    //1,控制器
+    app.controller("mycontroller1",function ($scope,User) {
+        $scope.context = "你好";
+
+        User.name=$scope.context;
+    });
+
+    //2,控制器
+    app.controller("mycontroller2",function ($scope,User) {
+        $scope.name = User.name;
+    });
+</script>
+
+</body>
+</html>
