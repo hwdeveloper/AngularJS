@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body>
+
+<!--ng-app 指令告诉 AngularJS，div 元素是 AngularJS 应用程序 的"所有者"。-->
+<div ng-app="myApp" >
+    <div ng-controller="headController">
+        <h1> {{name}}</h1>
+
+    </div>
+
+    <div ng-controller="contentController">
+
+        <h1> {{name}}</h1>
+
+    </div>
+
+</div>
+
+<script>
+    //1,获得的app对象
+    var app = angular.module("myApp",[]);
+
+
+    app.factory('User', function(){
+        return {};
+    });
+
+    //2，获得头部控制器
+    app.controller("headController",function ($scope,User) {
+        $scope.name="你好";
+        User.name=$scope.name;
+    });
+    //3,获得内容控制器
+    app.controller("contentController",function($scope,User){
+        $scope.name=User.name;
+
+    });
+
+</script>
+
+</body>
+</html>
