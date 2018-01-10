@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+
+    <table>
+        <tr ng-repeat="x in persons">
+        <td>{{ x.name }}</td>
+        <td>{{ x.country }}</td>
+        </tr>
+    </table>
+
+</div>
+<script >
+    var app = angular.module('myApp', []);
+    app.controller('myController', function($scope) {
+        $scope.persons = [
+            {name:'小刚',country:'中国'},
+            {name:'小明',country:'美国'},
+            {name:'小红',country:'新加坡'}
+        ];
+    });
+
+</script>
+</body>
+</html>

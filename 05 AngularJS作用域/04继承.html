@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body>
+
+<!--ng-app 指令告诉 AngularJS，div 元素是 AngularJS 应用程序 的"所有者"。-->
+<div ng-app="myApp" >
+
+
+    <div ng-controller="ParentCtrl">
+        <h1>{{ title }}</h1>
+        <div ng-controller="ChildCtrl">
+            <h1>{{ title }}</h1>
+            <h1>{{ sayHello(title) }}</h1>
+        </div>
+    </div>
+
+</div>
+
+<script>
+     var app = angular.module("myApp",[]);
+
+     app.controller("ParentCtrl", [ '$scope', function($scope){
+         $scope.title = "I'm the Parent.";
+         $scope.sayHello=function (data) {
+              return data+"呵呵";
+         }
+     }]);
+
+     app.controller("ChildCtrl", [ '$scope', function($scope){
+         // Nothing defined on $scope
+     }]);
+  
+    
+</script>
+
+</body>
+</html>

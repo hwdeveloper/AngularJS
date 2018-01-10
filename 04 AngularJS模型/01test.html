@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body>
+
+<!--ng-app 指令告诉 AngularJS，div 元素是 AngularJS 应用程序 的"所有者"。-->
+<div ng-app="myApp" ng-controller="myController">
+     <input type="text" ng-model="infor"/>
+</div>
+<script>
+    //1,获得app对象
+   var myApp = angular.module("myApp",[]);
+   //2,获得控制器
+    myApp.controller("myController",function ($scope) {
+        $scope.infor="你好";
+    });
+
+</script>
+
+</body>
+</html>

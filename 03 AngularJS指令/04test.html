@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body>
+
+<!--ng-app 指令告诉 AngularJS，div 元素是 AngularJS 应用程序 的"所有者"。-->
+<div ng-app="myApp" ng-controller="myController">
+    <table>
+      <tr ><td>姓名</td><td>国籍</td></tr>
+     <tr ng-repeat="person in persons"><td>{{person.name}}</td><td>{{person.country}}</td></tr>
+    </table>
+</div>
+<script>
+    //1,获得app
+    var app =angular.module("myApp",[]);
+    //2,获得控制器
+    app.controller("myController",function ($scope) {
+         //1,请求数据
+        $scope.persons = [
+            {name:'小刚',country:'中国'},
+            {name:'小明',country:'日报'},
+            {name:'小红',country:'新加坡'}
+        ];
+    });
+
+</script>
+
+</body>
+</html>

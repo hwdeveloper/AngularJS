@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+
+    姓名:  <input type="text" ng-model="name"><br>
+    年龄:  <input type="text" ng-model="age"><br>
+    <br>
+    姓名:年龄: {{name + " " + age}}
+
+</div>
+
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myController', function($scope) {
+        $scope.name = "小刚";
+        $scope.age = "18";
+    });
+</script>
+
+</body>
+</html>

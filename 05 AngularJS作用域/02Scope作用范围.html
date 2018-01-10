@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" >
+
+    <div  ng-controller="myCtrl1">
+
+        <ul>
+            <li ng-repeat="name in names">{{name}}</li>
+        </ul>
+
+    </div>
+
+    <div ng-controller="myCtrl2">
+
+        <ul>
+            <li ng-repeat="name in names">{{name}}</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+    //1,获得angular对象
+    var app = angular.module('myApp', []);
+    //2,获得控制器对象，并且进行处理
+
+
+    app.controller('myCtrl1', function($scope) {
+        $scope.names = ["Emil", "Tobias", "Linus"];
+    });
+
+    app.controller('myCtrl2', function($scope) {
+        $scope.names = ["小明", "小李", "小杨"];
+    });
+
+
+
+</script>
+
+</body>
+</html>

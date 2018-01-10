@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="myController">
+
+    <p>循环对象:</p>
+    <ul>
+        <!--按照国家进行排序-->
+        <li ng-repeat="x in names | orderBy:'country'">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+
+</div>
+
+<script >
+    angular.module('myApp', []).controller('myController', function($scope) {
+        $scope.names = [
+            {name:'小刚',country:'Norway'},
+            {name:'小明',country:'Sweden'},
+            {name:'小红',country:'Denmark'}
+        ];
+    });
+
+</script>
+
+</body>
+</html>

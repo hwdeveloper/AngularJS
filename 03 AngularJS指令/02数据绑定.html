@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.bootcss.com/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<!--1，设置当前的div为angular应用程序。2，设置quantity的值为1,price值为5-->
+<div data-ng-app="" data-ng-init="quantity=1;price=5">
+
+    <h2>价格计算器</h2>
+
+    数量: <input type="number" ng-model="quantity">
+    价格: <input type="number" ng-model="price">
+
+    <p><b>总价:</b> {{quantity * price}}</p>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<!--ng-app 指令告诉 AngularJS，<div> 元素是 AngularJS 应用程序 的"所有者"。-->
+<div ng-app="" ng-init="name='seraph'">
+
+    <!--   ng-bind 指令把应用程序变量 name 绑定到某个段落的 innerHTML-->
+    <p>姓名为 <span ng-bind="name"></span></p>
+
+</div>
+
+</body>
+</html>

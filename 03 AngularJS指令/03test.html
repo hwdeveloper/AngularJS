@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body>
+
+<!--ng-app 指令告诉 AngularJS，div 元素是 AngularJS 应用程序 的"所有者"。-->
+<div ng-app="" ng-init="students=[{name:'小刚',age:18},{name:'小林',age:11},{name:'小刚',age:18}]">
+    <ul >
+      <li ng-repeat="stu in students">
+
+         {{stu.name}}的年龄是{{stu.age}}
+
+      </li>
+
+
+    </ul>
+</div>
+
+</body>
+</html>

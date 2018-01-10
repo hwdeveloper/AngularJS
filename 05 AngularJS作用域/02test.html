@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+</head>
+<body>
+
+<!--ng-app 指令告诉 AngularJS，div 元素是 AngularJS 应用程序 的"所有者"。-->
+<div ng-app="myApp" >
+     <div ng-controller="headController">
+         <h1> {{name}}</h1>
+         <table>
+             <tr><td>姓名</td><td>国籍</td><td>name</td></tr>
+             <tr ng-repeat="user in persons"><td>{{user.name}}</td><td>{{user.country}}</td><td>{{name}}</td></tr>
+         </table>
+     </div>
+
+    <div ng-controller="contentController">
+
+        <h1> {{name}}</h1>
+    </div>
+
+    <div ng-controller="footController">
+        <h1> {{name}}</h1>
+
+    </div>
+</div>
+
+<script>
+    //1,获得的app对象
+    var app = angular.module("myApp",[]);
+    //2，获得头部控制器
+    app.controller("headController",function ($scope,$rootScope) {
+        $rootScope.name="头部";
+        $scope.persons = [
+            {name:'小刚',country:'中国'},
+            {name:'小明',country:'美国'},
+            {name:'小红',country:'新加坡'}
+        ];
+    });
+    //3,获得内容控制器
+    app.controller("contentController",function($scope){
+        $scope.name="内容";
+    });
+    //4,获得脚部控制器
+    app.controller("footController",function ($scope) {
+        $scope.name="脚部";
+    });
+</script>
+
+</body>
+</html>
