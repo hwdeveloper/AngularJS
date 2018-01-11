@@ -27,10 +27,11 @@
 
         $scope.submit = function() {
 
+            var url = "http://192.168.5.101:8088/getInfor?name="+$scope.user.name+"&&passwd="+$scope.user.passwd;
 
             $http({
                 method: 'GET',
-                url: 'http://192.168.5.101:8088/infor?name=kkkk&&passwd=222'
+                url: url
             }).then(function successCallback(response) {
                 console.log(response.data);
                 $scope.data=response.data;
