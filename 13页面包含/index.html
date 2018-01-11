@@ -1,0 +1,12 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>包含其他静态页面</title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="">
+<div id="header_id" ng-include="'page/header.html'"></div>
+<div>我是body内容</div>
+<div ng-include="'page/main_footer.html'"></div>
+</body>
+</html>
