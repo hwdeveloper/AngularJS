@@ -7,26 +7,61 @@
 <body>
 
 <div ng-app="myApp" ng-controller="formCtrl">
-    <form novalidate>
-        First Name:<br>
-        <input type="text" ng-model="user.firstName"><br>
-        Last Name:<br>
-        <input type="text" ng-model="user.lastName">
+    <form novalidate >
+        用户名:<br>
+        <input type="text" ng-model="user.name"><br>
+        密   码:<br>
+        <input type="text" ng-model="user.passwd">
         <br><br>
-        <button ng-click="reset()">RESET</button>
+        <button ng-click="submit()">submit</button>
+
     </form>
     <p>form = {{user}}</p>
-    <p>master = {{master}}</p>
+    <p>返回信息 = {{data}}</p>
 </div>
 
 <script>
     var app = angular.module('myApp', []);
-    app.controller('formCtrl', function($scope) {
-        $scope.master = {firstName: "John", lastName: "Doe"};
-        $scope.reset = function() {
-            $scope.user = angular.copy($scope.master);
+
+    app.controller('formCtrl', function($scope,$http) {
+
+        $scope.submit = function() {
+
+
+            $http({
+                method: 'GET',
+                url: 'http://192.168.5.101:8088/infor?name=kkkk&&passwd=222'
+            }).then(function successCallback(response) {
+                console.log(response.data);
+                $scope.data=response.data;
+            }, function errorCallback(response) {
+                // 请求失败执行代码
+            });
+
+            // $http({
+            //     method: 'POST',
+            //     url: 'http://192.168.5.101:8088/user',
+            //
+            //      data:{name:'test',passwd:20}
+            // }).then(function successCallback(response) {
+            //     console.log(response.data);
+            //     $scope.data=response.data;
+            // }, function errorCallback(response) {
+            //     // 请求失败执行代码
+            // });
+
+            // $http({
+            //     method:'post',
+            //     url:'http://192.168.5.101:8088/user',
+            //     data:{name:'test',passwd:20}
+            //
+            // }).success(function(response){
+            //
+            //     console.log(response.data);
+            //
+            // })
         };
-        $scope.reset();
+
     });
 </script>
 
