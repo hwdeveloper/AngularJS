@@ -8,24 +8,24 @@
 
 <form>
     选择一个选项:
-    <input type="radio" ng-model="myVar" value="dogs">Dogs
-    <input type="radio" ng-model="myVar" value="tuts">Tutorials
-    <input type="radio" ng-model="myVar" value="cars">Cars
+    <input type="radio" ng-model="myVar" value="china">中国
+    <input type="radio" ng-model="myVar" value="usa">美国
+    <input type="radio" ng-model="myVar" value="Japan">日本
 </form>
 
 <div ng-switch="myVar">
 <!--当dogs为真的时候才显示下面的内容-->
-    <div ng-switch-when="dogs">
-        <h1>Dogs</h1>
-        <p>Welcome to a world of dogs.</p>
+    <div ng-switch-when="china">
+        <h1>中国</h1>
+        <p>欢迎来到中国</p>
     </div>
-    <div ng-switch-when="tuts">
-        <h1>Tutorials</h1>
-        <p>Learn from examples.</p>
+    <div ng-switch-when="usa">
+        <h1>美国</h1>
+        <p>欢迎来到美国</p>
     </div>
-    <div ng-switch-when="cars">
-        <h1>Cars</h1>
-        <p>Read about cars.</p>
+    <div ng-switch-when="Japan">
+        <h1>日本</h1>
+        <p>欢迎来到京都</p>
     </div>
 </div>
 
